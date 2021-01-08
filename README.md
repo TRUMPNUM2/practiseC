@@ -75,4 +75,17 @@ apt install gdb ## 用于debug用
 > git 冲突解决方法
 > 1. git diff或者git status 查看哪些文件冲突 ，
 > 2. 解决冲突后执行git add xxx
+> 3. git branch -M main
+> 4. git remote add origin git@github.com:TRUMPNUM2/practiseC.git
+> 5. git push -u origin main
+> 6. git branch --set-upstream-to origin/main main 合并远程分支与本地分支
+
+常用命令
+
+> 查看分支：git branch
+>创建分支：git branch <name>
+>切换分支：git checkout <name>
+>创建+切换分支：git checkout -b <name>
+>合并某分支到当前分支：git merge <name>
+>删除分支：git branch -d <name>
 
