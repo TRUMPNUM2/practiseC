@@ -22,7 +22,7 @@ apt install gdb ## 用于debug用
                  "-I${workspaceFolder}/practiseC/include/",
                 "${fileDirname}/**",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/../build/${fileBasenameNoExtension}" // 输出可执行文件到那个目录
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -51,7 +51,7 @@ apt install gdb ## 用于debug用
             "name": "gcc - 生成和调试活动文件",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${fileDirname}/../build/${fileBasenameNoExtension}",  // 以点击文件目录查询可执行文件的具体位置
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
