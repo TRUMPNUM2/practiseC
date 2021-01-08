@@ -2,3 +2,4 @@ src/test
 build/**
 libs/**
 *.o
+src/dynamiclibapp
