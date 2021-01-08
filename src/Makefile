@@ -16,13 +16,16 @@ test.o:test.c
 	$(CC) $(CFLAGS) -I $(INCLUDE) -c $^
 ##dynamiclibapp.o:dynamiclibapp.c apue.h
 ##  $(CC) $(CFLAGS) $(INCLUDE) -c $^
+## 进入子目录子执行编译
 all:$(OBJS) $(LIB)
-	cd ../include && make all  ## 进入子目录子执行编译
+	cd ../include && make all  
 	$(CC) $(CFLAGS) -I $(INCLUDE) -o $(TARGET) $(OBJS) $(LIBPATH) $(LIBVAR)
+	rm -f *.o
+
 #    ##在上行中，在执行编译时，加载了 libmytest.so 中函数
 
 clean:
 	rm -f *.o
-	rm -f ../include/*.gch
+	cd ../libs&&rm -f *.so
 	rm -f $(TARGET)
 	cd ../include && make clean
