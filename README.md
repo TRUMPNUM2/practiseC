@@ -1,5 +1,10 @@
 ## C/C++ practise
-
+>ubuntu 修改源路径  
+>vscode 配置 需要执行 
+```shell
+apt install build-essentail
+apt install gdb ## 用于debug用
+```
 ### task 配置文件
 ```json
 {
@@ -66,4 +71,8 @@
     ]
 }
 ```
+
+> git 冲突解决方法
+> 1. git diff或者git status 查看哪些文件冲突 ，
+> 2. 解决冲突后执行git add xxx
 
