@@ -59,7 +59,7 @@ int main()
     for (size_t i = 0; i < 2; i++)
     {
         /* code */
-        printf("%d:%d", i, result[i]);
+        printf("%d:%d", (int)i, result[i]);
         printf("\n");
     }
 

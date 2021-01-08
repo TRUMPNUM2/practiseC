@@ -89,3 +89,47 @@ apt install gdb ## 用于debug用
 >合并某分支到当前分支：git merge <name>
 >删除分支：git branch -d <name>
 
+
+## vsCode+makefile – 调试C
++ tasks.json文件编写
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "shell", // 任务名称，与launch.json的preLaunchTask相对应
+            "command": "make", // 在shell中使用命令，如需加参数，可再添加args属性
+            "type":"shell"
+        }
+    ]
+}
+```
++ launch.json文件编写（用于调用调试程序）
+```json
+ {
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "(gdb) Launch",// 配置名称，将会在启动配置的下拉菜单中显示
+            "type": "cppdbg",// 配置类型，这里只能为cppdbg
+            "request": "launch",// 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${workspaceRoot}/test",// 将要进行调试的程序的路径
+            "stopAtEntry": true, // 设为true时程序将暂停在程序入口处，我一般设置为true
+            "cwd": "${workspaceRoot}",// 调试程序时的工作目录
+            "environment": [],// （环境变量？）
+            "externalConsole": true,// 调试时是否显示控制台窗口，一般设置为true显示控制台
+            "MIMode": "gdb",// 指定连接的调试器，可以为gdb或lldb。
+            "preLaunchTask": "shell" // 调试会话开始前执行的任务，一般为编译程序。与tasks.json的taskName相对应，可根据需求选择是否使用
+        }
+    ]
+}
+```
+
+
+
+
+-g:为调试使用
+-c:仅编译（Compile），不连接（Make）
+-o:输出文件名
+
