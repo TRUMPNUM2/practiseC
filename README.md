@@ -133,3 +133,9 @@ apt install gdb ## 用于debug用
 -c:仅编译（Compile），不连接（Make）
 -o:输出文件名
 
+
+> 如果 出现 error while loading shared libraries: libmytest.so: cannot open shared object file: No such file or directory
+> 说明动态的链接库没有被系统识别
+> vim /etc/ld.so.conf      //在新的一行中加入库文件所在目录 include /etc/ld.so.conf.d/*.conf 修改这个里面的文件，添加自己编译的之后的动态库，执行 ldconfig  即可生效
+>  /usr/lib  
+> # ldconfig                 //更新/etc/ld.so.cache文件

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "uthash.h"
+#include "sum.h"
 
 struct hashTable
 {
@@ -53,15 +54,16 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 
 int main()
 {
-    int test[] = {2, 34, 5, 64, 6, 7, 8, 0, 4};
-    int test1[10];
-    int *result = twoSum(test, sizeof(test) / sizeof(int), 13, test1);
-    for (size_t i = 0; i < 2; i++)
-    {
-        /* code */
-        printf("%d:%d", (int)i, result[i]);
-        printf("\n");
-    }
-
+    // int test[] = {2, 34, 5, 64, 6, 7, 8, 0, 4};
+    // int test1[10];
+    // int *result = twoSum(test, sizeof(test) / sizeof(int), 13, test1);
+    // for (size_t i = 0; i < 2; i++)
+    // {
+    //     /* code */
+    //     printf("%d:%d", (int)i, result[i]);
+    //     printf("\n");
+    // }
+    int s = sumab(2, 34);
+    printf("%d\n", s);
     return 0;
 }
